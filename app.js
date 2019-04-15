@@ -11,6 +11,7 @@
 
  //setting the connection 
  const MongoClient = require('mongodb').MongoClient;
+ const ObjectID = require('mongodb').ObjectID;
  const url = 'mongodb://localhost:27017/TaskApp';
 
  //connecting to mongodb
@@ -68,4 +69,18 @@ body:req.body.body
    }
    res.redirect('/');
   })
+})
+
+
+app.delete('/task/delete/:id', (req,res,next)=>{
+  const query = {_id:ObjectID(req.params.id)};
+  Tasks.deleteOne(query, (err,response)=>{
+    if(err){
+      return console.log(err);
+    }else{
+      console.log('Task deleted');
+      res.send(200);
+    }
+  })
+
 })

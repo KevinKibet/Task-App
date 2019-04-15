@@ -4,7 +4,8 @@
   "description": "",
   "main": "A simple app that takes care of your daily tasks and to-do\u001b[C to-do's",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app"
   },
   "author": "Kevin Kibet",
   "license": "ISC",

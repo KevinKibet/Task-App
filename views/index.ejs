@@ -15,7 +15,7 @@
 
 <ul>
     <%tasks.forEach((task)=>{ %>
-      <li><%= task.text %> - <%= task.body %></li>
+      <li><%= task.text %> - <%= task.body %> <a data-id="<%= task._id %>" href="#" class="delete-task">Delete</a></li>
     <% }) %>
   </ul>
 
