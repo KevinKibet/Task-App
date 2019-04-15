@@ -54,3 +54,18 @@ Tasks.find({}).toArray((err, tasks)=>{
 	
 })
 
+//post 
+app.post('/task/add', (req, res)=>{
+  //creating the task
+  const task = {
+text:req.body.text,
+body:req.body.body  
+
+  }
+  Tasks.insert(task, (err, result)=>{
+   if(err){
+   	return console.log(err)
+   }
+   res.redirect('/');
+  })
+})

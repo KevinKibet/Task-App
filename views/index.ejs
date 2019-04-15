@@ -1,5 +1,18 @@
 <% include ../views/partials/header %>
 
+<form method="post" action="/task/add">
+    <div>
+      <label>Task Name</label>
+      <input type="text" name="text" placeholder="Add Task">
+    </div>
+    <div>
+      <label>Task Body</label>
+      <textarea name="body" placeholder="Add Body"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+
 <ul>
     <%tasks.forEach((task)=>{ %>
       <li><%= task.text %> - <%= task.body %></li>
