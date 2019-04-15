@@ -1,0 +1,11 @@
+{
+  "name": "task-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "A simple app that takes care of your daily tasks and to-do\u001b[C to-do's",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Kibet",
+  "license": "ISC"
+}
