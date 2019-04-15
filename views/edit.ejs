@@ -1,0 +1,15 @@
+<% include ../views/partials/header %>
+
+<form method="post" action="/task/edit/<%=tasks._id%>">
+    <div>
+      <label>Task Name</label>
+      <input type="text" name="text"  value="<%=tasks.text%>">
+    </div>
+    <div>
+      <label>Task Body</label>
+      <textarea name="body" placeholder="Add Body" ><%=tasks.text%></textarea>
+    </div>
+    <button type="submit">Submit</button><a href="/">Cancel</a>
+  </form>
+
+<% include ../views/partials/footer %>

@@ -84,3 +84,37 @@ app.delete('/task/delete/:id', (req,res,next)=>{
   })
 
 })
+
+
+
+
+app.get('/task/edit/:id', (req,res)=>{
+const query = {_id:ObjectID(req.params.id)};
+Tasks.find(query).next((err, tasks)=>{
+  if(err) {
+    console.log(err);
+  }
+  res.render('edit', {tasks:tasks});
+})
+
+  
+})
+
+
+
+
+app.post('/task/edit/:id', (req, res)=>{
+  const query = {_id:ObjectID(req.params.id)};
+  //updating
+  const task = {
+text:req.body.text,
+body:req.body.body  
+
+  }
+  Tasks.updateOne(query, {$set:task}, (err, result)=>{
+   if(err){
+    return console.log(err)
+   }
+   res.redirect('/');
+  })
+})
