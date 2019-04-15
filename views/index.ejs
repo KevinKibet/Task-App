@@ -1,3 +1,9 @@
 <% include ../views/partials/header %>
-hello
+
+<ul>
+    <%tasks.forEach((task)=>{ %>
+      <li><%= task.text %> - <%= task.body %></li>
+    <% }) %>
+  </ul>
+
 <% include ../views/partials/footer %>
